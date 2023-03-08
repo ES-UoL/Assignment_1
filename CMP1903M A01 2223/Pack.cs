@@ -54,25 +54,33 @@ namespace CMP1903M_A01_2223
             //Riffle Shuffle
             else if (typeOfShuffle == 2)
             {
-                packFirstHalf.AddRange(pack.GetRange(0, 26));
-                packSecondHalf.AddRange(pack.GetRange(26, 26));
-                int i = 0;
-                int j = 0;
-                while (i != 52)
+                if (pack.Count == 52)
                 {
-                    pack[i] = packFirstHalf[j];
-                    i++;
-                    pack[i] = packSecondHalf[j];
-                    i++;
-                    j++;
+                    packFirstHalf.AddRange(pack.GetRange(0, 26));
+                    packSecondHalf.AddRange(pack.GetRange(26, 26));
+                    int i = 0;
+                    int j = 0;
+                    while (i != 52)
+                    {
+                        pack[i] = packFirstHalf[j];
+                        i++;
+                        pack[i] = packSecondHalf[j];
+                        i++;
+                        j++;
+                    }
+                    return true;
                 }
-                return true;
+                else
+                {
+                    Console.WriteLine("Error: The riffle shuffle method can only be performed on a full pack of 52 cards");
+                    return false;
+                }
             }
 
             //No Shuffle
             else if (typeOfShuffle == 3)
             {
-                Console.WriteLine("The Pack was not shuffled and so the cards\nremain in the same order as they were before\n");
+                Console.WriteLine("The Pack was not shuffled and so the cards\nremain in the same order as they were before");
                 return true;
             }
 
@@ -88,14 +96,14 @@ namespace CMP1903M_A01_2223
             recentlyDealtCards.Clear();
             if (pack.Count == 0)
             {
-                Console.WriteLine("The deck is empty");
+                Console.WriteLine("The pack is empty");
                 return null;
             }
             else
             {
                 Card TopCard = pack[0];
                 pack.RemoveAt(0);
-                recentlyDealtCards.Add( TopCard );
+                recentlyDealtCards.Add(TopCard);
                 dealtCards.AddRange(recentlyDealtCards);
                 return TopCard;
             }
@@ -107,12 +115,12 @@ namespace CMP1903M_A01_2223
             recentlyDealtCards.Clear();
             if (pack.Count == 0)
             {
-                Console.WriteLine("The deck is empty");
+                Console.WriteLine("The pack is empty");
                 return null;
             }
             else if (pack.Count < amount)
             {
-                Console.WriteLine($"It is not possible to deal {amount} cards since there are only {pack.Count} cards left in the deck");
+                Console.WriteLine($"It is not possible to deal {amount} cards since there are only {pack.Count} cards left in the pack");
                 return null;
             }
             else
@@ -131,13 +139,21 @@ namespace CMP1903M_A01_2223
         // Display pack
         public static void DisplayPack()
         {
-            int count = 1;
-            foreach (Card card in pack)
+            if (pack.Count == 0)
             {
-                Console.Write($"{count}. ");
-                card.WhatCardIsThis();
-                count++;
-            };
+                Console.WriteLine("The pack is empty");
+            }
+            else
+            {
+                int count = 1;
+                foreach (Card card in pack)
+                {
+                    Console.Write($"{count}. ");
+                    card.WhatCardIsThis();
+                    count++;
+                };
+            }
+
         }
     }
 }
