@@ -9,10 +9,12 @@ namespace CMP1903M_A01_2223
     class Card
     {
         //Fields
+        /*Encapsulation has been used to protect these fields by making them private and providing a controlled level 
+        of access through the public properties and constructor*/
         private int _value;
         private int _suit;
 
-        //Properties
+        //Properties with set method validation
         public int Value
         {
             get { return _value; }
@@ -52,6 +54,13 @@ namespace CMP1903M_A01_2223
         }
 
         //Methods
+        //This is an additional method that has been added beyond what was provided in the base code
+        /*
+        Abstraction is used here to map the card's numerical value and suit to their corresponding names 
+        using dictionaries, resulting in a more user-friendly representation of the card. 
+        The underlying implementation details of the cards are concealed from the user, which simplifies 
+        the code and makes it more maintainable.
+        */
         public void WhatCardIsThis()
         {
             //Value: numbers 1 - 13

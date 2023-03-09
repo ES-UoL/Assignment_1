@@ -10,7 +10,7 @@ namespace CMP1903M_A01_2223
     {
         static void Main(string[] args)
         {
-            // Call the testing method to review the code functionality
+            //Call the testing method to review the code functionality
             Testing.Test();
         }
     }
