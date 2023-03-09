@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace CMP1903M_A01_2223
 {
+    //Additional testing class added
     internal class Testing
     {
         public static void Test()
         {
-            // Create a pack object
+            //Create a pack object
             Pack CardPack = new Pack();
             while (true)
             {
-                // Testing menu
+                //Testing menu
                 Console.WriteLine("----------------Testing menu----------------\n");
                 Console.WriteLine("Enter the number that coresponds to the feature that you wish to test\n");
                 Console.WriteLine("1 - Shuffle");
@@ -35,7 +36,7 @@ namespace CMP1903M_A01_2223
                     Console.Clear();
                     continue;
                 }
-                // Shuffle menu
+                //Shuffle menu
                 if (option == 1)
                 {
                     Console.Clear();
@@ -61,7 +62,7 @@ namespace CMP1903M_A01_2223
                             Console.Clear();
                             continue;
                         }
-                        // Fisher-Yates shuffle and display the current order of the pack
+                        //Fisher-Yates shuffle and display the current order of the pack
                         if (shuffleType == 1)
                         {
                             Console.Clear();
@@ -78,7 +79,7 @@ namespace CMP1903M_A01_2223
                                 continue;
                             }
                         }
-                        // Riffle shuffle and display the current order of the pack
+                        //Riffle shuffle and display the current order of the pack
                         else if (shuffleType == 2)
                         {
                             Console.Clear();
@@ -95,20 +96,20 @@ namespace CMP1903M_A01_2223
                                 continue;
                             }
                         }
-                        // No shuffle and display the current order of the pack
+                        //No shuffle and display the current order of the pack
                         else if (shuffleType == 3)
                         {
                             Console.Clear();
                             Console.WriteLine("----------------No shuffle----------------\n");
                             Pack.shuffleCardPack(3);
                         }
-                        // Return to the main menu
+                        //Return to the main menu
                         else if (shuffleType == 4)
                         {
                             Console.Clear();
                             Console.WriteLine("Returning to the main menu");
                         }
-                        // Invalid shuffle type
+                        //Invalid shuffle type
                         else
                         {
                             Console.WriteLine("\nError: Invalid shuffle type");
@@ -118,7 +119,7 @@ namespace CMP1903M_A01_2223
                         }
                     }
                 }
-                // Deal
+                //Deal
                 else if (option == 2)
                 {
                     Console.Clear();
@@ -140,12 +141,12 @@ namespace CMP1903M_A01_2223
                             Console.Clear();
                             continue;
                         }
-                        // Deal no cards
+                        //Deal no cards
                         if (dealAmount == 0)
                         {
                             Console.WriteLine("\nNo cards dealt");
                         }
-                        // Deal one card
+                        //Deal one card
                         else if (dealAmount == 1)
                         {
                             Console.Clear();
@@ -156,7 +157,7 @@ namespace CMP1903M_A01_2223
                                 Pack.recentlyDealtCards[0].WhatCardIsThis();
                             }
                         }
-                        // Deal multiple cards
+                        //Deal multiple cards
                         else if (dealAmount > 1)
                         {
                             Console.Clear();
@@ -176,7 +177,7 @@ namespace CMP1903M_A01_2223
                         }
                     }
                 }
-                // Display
+                //Display
                 else if (option == 3)
                 {
                     Console.Clear();
@@ -203,7 +204,7 @@ namespace CMP1903M_A01_2223
                             Console.Clear();
                             continue;
                         }
-                        // Display pack
+                        //Display pack
                         if (displayType == 1)
                         {
                             Console.Clear();
@@ -211,7 +212,7 @@ namespace CMP1903M_A01_2223
                             Console.WriteLine("Here is the current order of the pack:\n");
                             Pack.DisplayPack();
                         }
-                        // Display all dealt cards
+                        //Display all dealt cards
                         else if (displayType == 2)
                         {
                             Console.Clear();
@@ -228,7 +229,7 @@ namespace CMP1903M_A01_2223
                                 }
                             }
                         }
-                        // Display recently dealt cards
+                        //Display recently dealt cards
                         else if (displayType == 3)
                         {
                             Console.Clear();
@@ -245,13 +246,13 @@ namespace CMP1903M_A01_2223
                                 }
                             }
                         }
-                        // Return to the main menu
+                        //Return to the main menu
                         else if (displayType == 4)
                         {
                             Console.Clear();
                             Console.WriteLine("Returning to the main menu");
                         }
-                        // Exception handling
+                        //Exception handling
                         else
                         {
                             Console.WriteLine("\nError: You must enter a valid menu option");
@@ -261,7 +262,7 @@ namespace CMP1903M_A01_2223
                         }
                     }
                 }
-                // Exit
+                //Exit
                 else if (option == 4)
                 {
                     Console.Clear();
@@ -273,7 +274,7 @@ namespace CMP1903M_A01_2223
                 {
                     Console.WriteLine("\nError: You must enter a number that corresponds to the feature that you wish to test");
                 }
-                // Full program loop
+                //Full program loop
                 Console.WriteLine("\n\nPress any key to return to the main menu");
                 Console.ReadKey();
                 Console.Clear();

@@ -136,7 +136,8 @@ namespace CMP1903M_A01_2223
             }
 
         }
-        // Display pack
+        //Display pack
+        //This is an additional method that has been added beyond what was provided in the base code
         public static void DisplayPack()
         {
             if (pack.Count == 0)
