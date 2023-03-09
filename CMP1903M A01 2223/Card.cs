@@ -9,8 +9,10 @@ namespace CMP1903M_A01_2223
     class Card
     {
         //Fields
-        /*Encapsulation has been used to protect these fields by making them private and providing a controlled level 
-        of access through the public properties and constructor*/
+        /*
+        Encapsulation has been used to protect these fields by making them private and providing a controlled level 
+        of access through the public properties and constructor.
+        */
         private int _value;
         private int _suit;
 
